@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@" license="@LICENSE@">
+  <description lang="en"></description>
+  <description lang="fr"></description>
+
+  <requires>
+  </requires>
+
+  <parameters>
+    <param name="ckeditor_url" label="CKEditor download URL" type="text" default="http://ftp.dynacase.org/third-party/ckeditor_@VERSION@.tar.gz" volatile="yes" />
+  </parameters>
+
+  <pre-install>
+    <check type="syscommand" command="gunzip" />
+    <check type="syscommand" command="tar" />
+  </pre-install>
+
+  <pre-upgrade>
+    <check type="syscommand" command="gunzip" />
+    <check type="syscommand" command="tar" />
+  </pre-upgrade>
+
+  <post-install>
+    <download href="@ckeditor_url" action="programs/ckeditor_install"><label lang="en">Download and install CKEditor</label></download>
+  </post-install>
+
+  <post-upgrade>
+    <download href="@ckeditor_url" action="programs/ckeditor_install"><label lang="en">Download and upgrade CKEditor</label></download>
+  </post-upgrade>
+</module>

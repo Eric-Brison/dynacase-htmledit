@@ -63,6 +63,36 @@ if( $ret !== 0 ) {
   exit(1);
 }
 
+// Remove unwanted ckeditor files
+$unwanted_files = array(
+			'CHANGES.html',
+			'INSTALL.html',
+			'ckeditor.pack',
+			'ckeditor_basic.js',
+			'ckeditor_basic_source.js',
+			'ckeditor_source.js',
+			'ckeditor.asp',
+			'ckeditor.php',
+			'ckeditor_php4.php',
+			'ckeditor_php5.php'
+			);
+$unwanted_dirs = array(
+		       '_samples',
+		       '_source'
+		       );
+foreach( $unwanted_files as $unwanted ) {
+  $unwanted = sprintf('%s/ckeditor/%s', $tempdir, $unwanted);
+  if( file_exists($unwanted) ) {
+    unlink($unwanted);
+  }
+}
+foreach( $unwanted_dirs as $unwanted ) {
+  $unwanted = sprintf('%s/ckeditor/%s', $tempdir, $unwanted);
+  if( file_exists($unwanted) ) {
+    system(sprintf('rm -Rf %s', escapeshellarg($unwanted)), $ret);
+  }
+}
+
 // Remove old CKEditor
 if( is_dir($ckeditor_dir) ) {
   $cmd = sprintf('rm -Rf %s', escapeshellarg($ckeditor_dir));

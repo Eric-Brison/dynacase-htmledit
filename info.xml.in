@@ -7,7 +7,7 @@
   </requires>
 
   <parameters>
-    <param name="ckeditor_url" label="CKEditor download URL" type="text" default="http://ftp.dynacase.org/third-party/ckeditor_@VERSION@.tar.gz" volatile="yes" />
+    <param name="ckeditor_url" label="CKEditor download URL" type="text" default="http://ftp.dynacase.org/third-party/ckeditor_@VERSION@.tar.gz" volatile="yes" onupgrade="W" />
   </parameters>
 
   <pre-install>

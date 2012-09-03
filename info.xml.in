@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@" license="@LICENSE@">
+<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@">
   <description lang="en"></description>
   <description lang="fr"></description>
 
@@ -12,7 +12,7 @@
   </requires>
 
   <parameters>
-    <param name="ckeditor_url" label="CKEditor download URL" type="text" default="http://ftp.dynacase.org/third-party/ckeditor_@VERSION@.tar.gz" volatile="yes" onupgrade="W" />
+    <param name="ckeditor_url" label="CKEditor download URL" type="text" default="http://ftp.dynacase.org/third-party/ckeditor_3.6.tar.gz" volatile="yes" onupgrade="W" />
   </parameters>
 
   <pre-install>

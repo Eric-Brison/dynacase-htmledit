@@ -1,27 +1,13 @@
-PACKAGE = @PACKAGE@
 VERSION=@VERSION@
-utildir=@PUBRULE@
-pubdir=@prefix@
-appname=@APPNAME@
+RELEASE=@RELEASE@
+PACKAGE=@PACKAGE@
 
-pages_not_xml=info.xml
-pages_not_php=fam2po.php po2js.php
+webinst:
+	mkdir -p tmp
+	tar -C src -zcf tmp/content.tar.gz .
+	cp info.xml tmp/info.xml
+	tar -C tmp -zcf dynacase-htmledit-installer-${VERSION}-${RELEASE}.webinst info.xml content.tar.gz
 
-include $(utildir)/PubRule
-
-$(pubdir):
-	mkdir -p $@
-
-$(pubdir)/programs: $(pubdir)
-	mkdir -p $@
-
-$(pubdir)/programs/ckeditor_install: programs/ckeditor_install $(pubdir)/programs
-	cp $< $@
-	chmod a+x $@
-
-$(pubdir)/$(appname): $(pubdir)
-	mkdir -p $@
-
-publish: \
-	$(pubdir)/programs/ckeditor_install \
-	$(pubdir)/$(appname)
+clean:
+	rm -Rf tmp
+	rm -Rf dynacase-htmledit-installer-*.webinst Makefile config.* configure info.xml autom4te.cache

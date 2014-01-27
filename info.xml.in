@@ -26,10 +26,10 @@
   </pre-upgrade>
 
   <post-install>
-    <download href="@ckeditor_url" action="programs/ckeditor_install"><label lang="en">Download and install CKEditor</label></download>
+    <download href="@ckeditor_url" action="programs/htmledit_install"><label lang="en">Download and install CKEditor</label></download>
   </post-install>
 
   <post-upgrade>
-    <download href="@ckeditor_url" action="programs/ckeditor_install"><label lang="en">Download and upgrade CKEditor</label></download>
+    <download href="@ckeditor_url" action="programs/htmledit_install"><label lang="en">Download and upgrade CKEditor</label></download>
   </post-upgrade>
 </module>

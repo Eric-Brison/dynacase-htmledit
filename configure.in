@@ -1,6 +1,7 @@
+
+AC_INIT(./Makefile.in)
 AC_SUBST(PACKAGE)
 PACKAGE=dynacase-htmledit-installer
-AC_INIT(./Makefile.in)
 AC_SUBST(VERSION)
 VERSION=`cat VERSION`
 AC_SUBST(RELEASE)
